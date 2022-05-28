@@ -37,6 +37,7 @@ namespace Auto_Run_1._1
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.checkedTempates = new System.Windows.Forms.CheckedListBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartBotButton
@@ -61,7 +62,7 @@ namespace Auto_Run_1._1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(368, 301);
+            this.button1.Location = new System.Drawing.Point(316, 293);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 2;
@@ -129,11 +130,23 @@ namespace Auto_Run_1._1
             // 
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label1.Location = new System.Drawing.Point(51, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "F2 - Start Run/F4 - Stop";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 336);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedTempates);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.StartStream);
@@ -143,6 +156,7 @@ namespace Auto_Run_1._1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,6 +169,7 @@ namespace Auto_Run_1._1
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         public System.Windows.Forms.CheckedListBox checkedTempates;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
