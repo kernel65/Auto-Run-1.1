@@ -24,7 +24,6 @@ namespace Auto_Run_1._1
                 Bottom = yBottom;
             }
 
-
             public int Left;        // x position of upper-left corner
             public int Top;         // y position of upper-left corner
             public int Right;       // x position of lower-right corner
@@ -68,9 +67,6 @@ namespace Auto_Run_1._1
             {
                 Console.WriteLine("Exception in MakeScreenShot");
             }
-        }
-        
-
-        
+        }             
     }
 }

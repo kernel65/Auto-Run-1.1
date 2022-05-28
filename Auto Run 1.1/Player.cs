@@ -21,7 +21,6 @@ namespace Auto_Run_1._1
         private GrabImage.RECT winCoordinates;
         
 
-
         public Player(List<int> checkedTemplates)
         {          
             startBot = new Thread(RunBot);
@@ -35,7 +34,6 @@ namespace Auto_Run_1._1
             Thread.Sleep(100);
             pointWhenStart = GetNearPoint(points, FileManager.GetDataFromFile());
         }
-
 
         public struct PlayerData
         {
@@ -114,19 +112,16 @@ namespace Auto_Run_1._1
             
         }
 
-
         public void RunBot()
         {
             Console.WriteLine("Wait 5 seconds");
             Thread.Sleep(5000);
             Console.WriteLine(GetDate() + "Bot is running");
-            //RepairAll();
             
             Coordinates currPlayerData = FileManager.GetDataFromFile();           
             CommandControl.PressKeyDown(CommandControl.W);          
             bool isPressedSlow = false;
             Console.WriteLine("Near Point = " + pointWhenStart);
-
 
             while (isRun)
             {
@@ -242,28 +237,6 @@ namespace Auto_Run_1._1
                             startTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
                         }
 
-                        if(CommandPoint == "Jump")
-                        {
-                            /*
-                            Console.WriteLine("Lenght = " + length);
-
-                            if(length < 1.0)
-                            {
-                                CommandControl.PressKeyUp(CommandControl.W);
-                                Thread.Sleep(300);
-                                CommandControl.PressKey(CommandControl.Jump);
-                                Thread.Sleep(2000);
-                                break;
-                            }
-
-                            if (length < 4.5 && !isPressedSlow)
-                            {
-                                CommandControl.PressKeyDown(CommandControl.SlowMove);
-                                isPressedSlow = true;
-                            }
-                            */
-                        }
-
                         if (CommandPoint == "FarmPoint")
                         {
                             if (length <= 0.7)
@@ -294,8 +267,6 @@ namespace Auto_Run_1._1
                                 Thread.Sleep(1);
                                 CommandControl.PressKeyUp(CommandControl.SlowMove);
                                 Thread.Sleep(150);
-
-
 
                                 Image<Bgr, byte> template;
                                 Point[] tPoint = GetTemplatePoint(out template, 0.63);
@@ -350,9 +321,7 @@ namespace Auto_Run_1._1
                             catch (Exception e)
                             {
                                 Console.WriteLine("Exception in runBot -> differ = " + diff);
-                            }
-
-                            
+                            }                          
                         }
 
                         Thread.Sleep(60);
@@ -369,7 +338,6 @@ namespace Auto_Run_1._1
 
             CommandControl.PressKeyUp(CommandControl.W);
         }
-
 
         public void RepairAll()
         {
@@ -403,7 +371,6 @@ namespace Auto_Run_1._1
             CommandControl.PressKeyUp(CommandControl.R);
             Thread.Sleep(1000);
         }
-
 
         public void CheckTemplate(Image<Bgr, byte> template, Point[] templatePoint)
         {
@@ -479,7 +446,6 @@ namespace Auto_Run_1._1
             return false;
         }
 
-
         private Point[] GetTemplatePoint(out Image<Bgr, byte> template, double detectProcent)
         {
             grabImage.MakeScreenShot(FileManager.SCREEN, winCoordinates, Window.WindowWidth, Window.WindowHeight);
@@ -529,7 +495,5 @@ namespace Auto_Run_1._1
 
             return resultIndex;
         }
-        
-
     }
 }

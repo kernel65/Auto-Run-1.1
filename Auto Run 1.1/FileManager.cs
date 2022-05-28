@@ -60,8 +60,6 @@ namespace Auto_Run_1._1
             @"Images\Templates\template_young_tree.png",
         };
 
-
-
         public static Player.PlayerData[] ReadAndParsePos()
         {
              

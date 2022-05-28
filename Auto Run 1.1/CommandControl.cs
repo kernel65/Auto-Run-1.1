@@ -22,10 +22,8 @@ namespace Auto_Run_1._1
         public static VirtualKeyCode Back = VirtualKeyCode.VK_S;
        
 
-
         [DllImport("User32.Dll")]
         private static extern long SetCursorPos(int x, int y);
-
 
         public static void PressKeyUp(VirtualKeyCode code)
         {

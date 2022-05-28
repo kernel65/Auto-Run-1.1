@@ -17,7 +17,6 @@ namespace Auto_Run_1._1
         [DllImport("user32.dll")]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-
         public void ForceForegrounWindow(IntPtr hwnd)
         {
             const int SW_RESTORE = 9;
@@ -37,7 +36,6 @@ namespace Auto_Run_1._1
                     hwnd = proc.MainWindowHandle;
                 }
             }
-
             return hwnd;
         }
     }

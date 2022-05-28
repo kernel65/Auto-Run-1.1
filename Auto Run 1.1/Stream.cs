@@ -29,17 +29,14 @@ namespace Auto_Run_1._1
         }
 
 
-
         public void RunStream()
         {
-
             Player.Coordinates currPos = FileManager.GetDataFromFile();
             Vector3 vCurr = new Vector3(currPos.X, currPos.Y, currPos.Z);
             Vector3 vPrev = vCurr;
 
             while (isStreamRunning)
             {
-
                 currPos = FileManager.GetDataFromFile();
                 vCurr = new Vector3(currPos.X, currPos.Y, currPos.Z);
                 double lenght = Vector3.GetLenght(vCurr - vPrev);
@@ -86,7 +83,6 @@ namespace Auto_Run_1._1
             {
                 using (Image<Gray, float> result = img.MatchTemplate(templates[i], Emgu.CV.CvEnum.TemplateMatchingType.CcoeffNormed))
                 {
-
                     double[] minValues, maxValues;
                     Point[] minLocations, maxLocations;
                     result.MinMax(out minValues, out maxValues, out minLocations, out maxLocations);
@@ -98,8 +94,7 @@ namespace Auto_Run_1._1
                     }
                 }
             }
-        
-            
+                
             if(detectedTemplate >= 0)
             {
                 for(int i = 0; i < positions.Count; i++)
@@ -126,7 +121,6 @@ namespace Auto_Run_1._1
             }
         
         }
-
 
         private Image<Bgr, byte>[] IniAllTemplates()
         {

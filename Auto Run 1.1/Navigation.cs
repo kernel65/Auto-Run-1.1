@@ -4,7 +4,6 @@ namespace Auto_Run_1._1
 {
     class Navigation
     {
-
         public static double GetAngle(Vector2 v)
         {
             double RADTODEG = 180.0 / Math.PI;
@@ -24,7 +23,6 @@ namespace Auto_Run_1._1
             Vector2 normal = new Vector2(DirV.X / length, DirV.Y / length);
 
             return GetAngle(normal);
-
         }
 
         public static double AngleDifference(double angle1, double angle2)
