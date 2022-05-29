@@ -7,18 +7,16 @@ type OverwolfHookWindow = typeof window & {
     NWMM_registerEventCallback: typeof onPlayerDataUpdateEvent.register;
 }
 
-const FILE_PATH = `${overwolf.io.paths.documents}\\OverwolfAutopath11\\test11.txt`;
+const FILE_PATH = `${overwolf.io.paths.documents}\\OverwolfAutopath\\position.pos`;
 export const positionUpdateRate = 40;
 
 type OnPlayerDataUpdateListener = (info: PlayerData) => void;
 
 const onPlayerDataUpdateEvent = new UnloadingEvent<OnPlayerDataUpdateListener>('onPlayerDataUpdate');
 
-
 export const registerEventCallback = onPlayerDataUpdateEvent.register;
     //? onPlayerDataUpdateEvent.register
     //: (overwolf.windows.getMainWindow() as OverwolfHookWindow).NWMM_registerEventCallback;
- 
  
 
 //Do something with game data    
@@ -27,21 +25,16 @@ function onUpdate(info: any) {
     
     if (!playerData) {
         return;
-    }
-    
-
-    onPlayerDataUpdateEvent.fire(playerData);
-    
+    }    
+    onPlayerDataUpdateEvent.fire(playerData);   
 }
-
 
 
 function writeData(data: string) {
     fileManager.readFile().then((str) => {
         const canWrite = fileManager.parseSyncWord(str, ';');
         if(canWrite == 'canwrite' || canWrite == ''){
-            console.log("We can write!!");
-            //Записать данные в файл!
+            console.log("We can write!!");          
             fileManager.writeFile(data);
         }
         else{
@@ -61,7 +54,6 @@ function transformData(info: any): PlayerData | undefined {
     }
 
     const locationParts = (info.location as string).trim().split(',');
-
     const position = {
         x: parseFloat(locationParts[1]),
         y: parseFloat(locationParts[3]),
@@ -69,8 +61,6 @@ function transformData(info: any): PlayerData | undefined {
     };
 
     const rotation = -(parseFloat(locationParts[11]) - 90) * Math.PI / 180;
-
-
     writeData(
         position.x + ';' +
         position.y + ';' +
@@ -81,7 +71,6 @@ function transformData(info: any): PlayerData | undefined {
   
 
     const compass = locationParts[13].trim();
-
     return {
         position,
         rotation,
