@@ -32,7 +32,8 @@ npm run build
 7. В открытом окне, нажать на "Load unpacked extension" и выбрать папку `ts/dist/` .
 После появится приложение в списке.
 
-8.В папке Документы создать папку OverwolfAutopath и создать файл position.pos
+8. В папке Документы создать папку OverwolfAutopath и создать файл position.pos
+
 
 Приложение запускается автоматически при запуске New World, опять же при наличии whitelist
 
