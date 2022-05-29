@@ -17,8 +17,6 @@ export function parseSyncWord(line: string, separator: string): string{
 
 
 export function writeFileSync(file_path: string, data: string){
-    console.log('Inside writeFile');
-    
     function callback(){
         console.log('Inside Callback');
     }
@@ -31,8 +29,6 @@ export function writeFileSync(file_path: string, data: string){
         callback    
     );
 }
-
-
 
 
 export function readFileSync(file_path: string): string{    
