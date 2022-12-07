@@ -346,16 +346,17 @@ namespace Auto_Run_1._1
             int x = coord.Left;
             int y = coord.Top;
 
-            Thread.Sleep(2000);
-
+            CommandControl.PressKeyUp(CommandControl.W);
+            Thread.Sleep(2000);        
             CommandControl.PressKey(CommandControl.Tab);
             Thread.Sleep(200);
-            Repair(x, y, 540, 740);
-            Repair(x, y, 538, 784);
-            Repair(x, y, 580, 783);
-            Repair(x, y, 540, 826);
+            Repair(x, y, 533, 669);        
+            Repair(x, y, 540, 706);
+            Repair(x, y, 583, 712);
+            Repair(x, y, 535, 749);
             CommandControl.PressKey(CommandControl.Tab);
             Thread.Sleep(500);
+            CommandControl.PressKeyDown(CommandControl.W);
         }
 
         private void Repair(int x, int y, int offsetX, int offsetY)
